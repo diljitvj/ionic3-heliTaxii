@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,3 +12,21 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+@import '../login/pages/login-options/login-options.scss';
+@import '../login/pages/login-otp/login-otp.scss';
+@import '../home/pages/home/home.scss';
+@import '../history/pages/history/history.scss';
+@import '../settings/pages/settings/settings.scss';
+@import '../booking/pages/ride-now/ride-now.scss';
+@import '../booking/pages/ride-later/ride-later.scss';
+@font-face {
+  font-family: 'Ubuntu-Regular';
+  src: url('../assets/fonts/Ubuntu/Ubuntu-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'Ubuntu-Regular';
+  letter-spacing: 1px;
+}

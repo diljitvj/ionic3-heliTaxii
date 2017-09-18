@@ -1,0 +1,28 @@
+<ion-content >
+    <button ion-button clear icon-only (click)="goBack()">
+    <ion-icon name="arrow-round-back"></ion-icon>
+    </button>
+    <div class="otp-block" padding>
+        <div *ngIf="stage === 1">
+            <h4 text-center>Enter your Mobile number</h4>
+            <p text-center>Otp will be sent to your mobile via sms</p>
+            <ion-list>
+                <ion-item>
+                    <ion-label color="primary" class="phonenumber-label" >+91</ion-label>
+                    <ion-input type="tel" placeholder="Phone number" [(ngModel)]="phoneNumber"></ion-input>
+                </ion-item>
+            </ion-list>
+            <button ion-button block (click)="requestForOtp()">Send</button>
+        </div>
+        <div *ngIf="stage === 2">
+            <h4 text-center>Verify Mobile number</h4>
+            <p text-center>Enter the OTP sent to {{phoneNumber}}</p>
+            <ion-list>
+                <ion-item>
+                    <ion-input type="number" placeholder="OTP"></ion-input>
+                </ion-item>
+            </ion-list>
+            <button ion-button block (click)="VerifyOtpAndLogin()">Login</button>
+        </div>
+    </div>
+</ion-content>

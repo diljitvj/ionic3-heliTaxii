@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons left>
+            <button
+                ion-button
+                menuToggle
+            >
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>Settings</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-fab
+        right
+        bottom
+    >
+        <button
+            ion-fab
+            color="light"
+            (click)="goToHome()"
+        >
+            <ion-icon name="home"></ion-icon>
+        </button>
+    </ion-fab>
+
+</ion-content>

@@ -5,12 +5,25 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+
+import { LoginOptionsPage } from '../login/pages/login-options/login-options';
+import { LoginOtpPage } from '../login/pages/login-otp/login-otp';
+import { HomePage } from '../home/pages/home/home';
+import { RideNowPage } from '../booking/pages/ride-now/ride-now';
+import { RideLaterPage } from '../booking/pages/ride-later/ride-later';
+import { HistoryPage } from '../history/pages/history/history';
+import { SettingsPage } from '../settings/pages/settings/settings';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    LoginOptionsPage,
+    LoginOtpPage,
+    HomePage,
+    RideNowPage,
+    RideLaterPage,
+    HistoryPage,
+    SettingsPage
   ],
   imports: [
     BrowserModule,
@@ -19,12 +32,18 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    LoginOptionsPage,
+    LoginOtpPage,
+    HomePage,
+    RideNowPage,
+    RideLaterPage,
+    HistoryPage,
+    SettingsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }
