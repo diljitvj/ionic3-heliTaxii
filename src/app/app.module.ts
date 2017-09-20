@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, ViewChild } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -43,6 +43,7 @@ import { SettingsPage } from '../settings/pages/settings/settings';
   providers: [
     StatusBar,
     SplashScreen,
+    ViewChild,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

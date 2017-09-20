@@ -30,3 +30,40 @@
   font-family: 'Ubuntu-Regular';
   letter-spacing: 1px;
 }
+
+//Select Pop over custom styles
+ion-popover.select-popover {
+  .popover-wrapper {
+    .popover-arrow {
+      display: none;
+    }
+    .popover-content {
+      left: 0px !important;
+      width: 100%;
+      ion-radio {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+//Select action sheet custom styles
+ion-action-sheet.select-action-sheet {
+  .action-sheet-wrapper {
+    .action-sheet-container {
+      padding-top: 0;
+      .action-sheet-group {
+        .action-sheet-title {
+          background: black;
+          color: white;
+        }
+        button {
+          color: black
+        }
+        .action-sheet-cancel {
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -1,1 +1,41 @@
-page-ride-now {}
+page-ride-now {
+  ion-list.ride-input {
+    ion-item {
+      ion-icon {
+        font-size: 12px;
+        padding-top: 9px;
+        font-family: Ubuntu-Regular;
+        color: darkgray;
+        min-width: 4em !important;
+      }
+      ion-label {
+        display: none;
+        font-size: 13px; // display: inherit;
+      }
+      .item-inner {
+        margin-left: 0 !important;
+        ion-select {
+          max-width: 100%;
+          width: 100%;
+          float: right;
+          .select-placeholder.select-text {
+            font-size: 15px;
+            color: black;
+          }
+        }
+      }
+    }
+  }
+  ion-card {
+    ion-card-header {
+      background: black;
+      color: white !important;
+    }
+    ion-list {
+      button {
+        text-align: center;
+        border: 1px solid black !important;
+      }
+    }
+  }
+}
