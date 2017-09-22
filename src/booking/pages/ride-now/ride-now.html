@@ -1,74 +1,119 @@
 <ion-header>
-  <ion-navbar>
-    <ion-buttons left>
-      <button ion-button menuToggle>
+    <ion-navbar color="primary">
+        <ion-buttons left>
+            <button
+                ion-button
+                menuToggle
+            >
                 <ion-icon name="menu"></ion-icon>
             </button>
-    </ion-buttons>
-    <ion-title>Ride Now</ion-title>
-  </ion-navbar>
+        </ion-buttons>
+        <ion-title>Ride Now</ion-title>
+    </ion-navbar>
 </ion-header>
 <ion-content>
-  <ion-list class="ride-input">
-    <ion-item *ngIf="stage >= 1">
-      <ion-label>Select Boarding Point</ion-label>
-      <ion-icon item-start>
-        Boarding
-      </ion-icon>
-      <ion-select text-center #boardingSelect placeholder="Select Boarding Point" interface="action-sheet" (ionChange)="onInput(1)"
-        [(ngModel)]="selectedBoardingPoint">
-        <ion-option value="1">Bial</ion-option>
-        <ion-option value="2">HAL</ion-option>
-        <ion-option value="3">Electronic City</ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item [hidden]="stage<2">
-      <ion-label>Select Drop Off Point</ion-label>
+    <form #f>
+        <ion-list class="ride-input">
+            <ion-item *ngIf="stage >= 1">
+                <ion-label>Select Boarding Point</ion-label>
+                <ion-icon item-start>Boarding</ion-icon>
+                <ion-select
+                    name="boardingPoint"
+                    text-center
+                    #boardingSelect
+                    placeholder="Select Boarding Point"
+                    interface="action-sheet"
+                    [(ngModel)]="selectedBoardingPoint"
+                    (ionBlur)="onInput(1)"
+                >
+                    <ion-option value="1">Bial</ion-option>
+                    <ion-option value="2">HAL</ion-option>
+                    <ion-option value="3">Electronic City</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item [hidden]="stage<2">
+                <ion-label>Select Drop Off Point</ion-label>
+                <ion-icon item-start>Drop Off</ion-icon>
+                <ion-select
+                    text-center
+                    #dropOffSelect
+                    placeholder="Select Drop off Point"
+                    interface="action-sheet"
+                    name="dropOffPoint"
+                    [(ngModel)]="selectedDropOffPoint"
+                    (ionBlur)="onInput(2)"
+                >
+                    <ion-option
+                        *ngFor="let loc of dropOffPoints"
+                        value="{{loc.value}}"
+                    >
+                        {{loc.text}}
+                    </ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item [hidden]="stage < 3">
+                <ion-label>Choose No of Seats</ion-label>
 
-      <ion-icon item-start>
-        Drop Off
-      </ion-icon>
-      <ion-select text-center #dropOffSelect placeholder="Select Drop off Point" interface="action-sheet" (ionChange)="onInput(2)">
-        <ion-option *ngFor="let loc of dropOffPoints" value="{{loc.value}}">
-          {{loc.text}}
-        </ion-option>
-      </ion-select>
-    </ion-item>
-    <ion-item [hidden]="stage < 3">
-      <ion-label>Choose No of Seats</ion-label>
+                <ion-icon item-start>Seats</ion-icon>
 
-      <ion-icon item-start>
-        Seats</ion-icon>
-
-      <ion-select text-center #seatSelect placeholder="No of Seats" interface="action-sheet" (ionChange)="onInput(3)" [(ngModel)]="selectedSeats">
-        <ion-option value="1">1</ion-option>
-        <ion-option value="2">2</ion-option>
-        <ion-option value="3">3</ion-option>
-        <ion-option value="4">4</ion-option>
-        <ion-option value="5">5</ion-option>
-        <ion-option value="6">6</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list>
-  <div [hidden]="!showTimeSlots" padding text-center>
-    <p>Please Select a Time Slot to proceed</p>
-  </div>
-  <ion-card [hidden]="!showTimeSlots">
-    <ion-card-header text-center>Available Time Slots</ion-card-header>
-    <ion-list>
-      <button ion-item detail-none text-center>
+                <ion-select
+                    text-center
+                    #seatSelect
+                    placeholder="No of Seats"
+                    interface="action-sheet"
+                    (ionBlur)="onInput(3, f)"
+                    name="seats"
+                    [(ngModel)]="selectedSeats"
+                >
+                    <ion-option value="1">1</ion-option>
+                    <ion-option value="2">2</ion-option>
+                    <ion-option value="3">3</ion-option>
+                    <ion-option value="4">4</ion-option>
+                    <ion-option value="5">5</ion-option>
+                    <ion-option value="6">6</ion-option>
+                </ion-select>
+            </ion-item>
+        </ion-list>
+    </form>
+    <div
+        [hidden]="!showTimeSlots"
+        padding
+        text-center
+    >
+        <p>Please Select a Time Slot to proceed</p>
+    </div>
+    <ion-card [hidden]="!showTimeSlots">
+        <ion-card-header text-center>Available Time Slots</ion-card-header>
+        <ion-list>
+            <button
+                ion-item
+                detail-none
+                text-center
+                outline
+                (click)="onSelectTimeSlot(1)"
+            >
                 9:15 - 9:20
             </button>
 
-      <button ion-item detail-none text-center>
+            <button
+                ion-item
+                detail-none
+                text-center
+                (click)="onSelectTimeSlot(1)"
+            >
                 9:55 - 10:00
             </button>
 
-      <button ion-item detail-none text-center>
+            <button
+                ion-item
+                detail-none
+                text-center
+                (click)="onSelectTimeSlot(1)"
+            >
                 10:35 - 10:40
             </button>
 
-    </ion-list>
-  </ion-card>
+        </ion-list>
+    </ion-card>
 
 </ion-content>

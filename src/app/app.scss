@@ -54,7 +54,7 @@ ion-action-sheet.select-action-sheet {
       padding-top: 0;
       .action-sheet-group {
         .action-sheet-title {
-          background: black;
+          background: color($colors, secondary);
           color: white;
         }
         button {

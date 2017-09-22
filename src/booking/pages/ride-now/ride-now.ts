@@ -1,6 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { NavController, Select, LoadingController } from 'ionic-angular';
 
+import { LuggageDetailsPage } from '../luggage-details/luggage-details';
+
 @Component({
     selector: 'page-ride-now',
     templateUrl: 'ride-now.html',
@@ -16,14 +18,18 @@ export class RideNowPage {
     private selectedDropOffPoint;
     private selectedSeats;
     private showTimeSlots = false;
+    private selectedTimeSlot;
     constructor(public navCtrl: NavController, public viewChild: ViewChild, public loadingCtrl: LoadingController) {
         this.boardingPoints = this.locations;
     }
-    ionViewWillEnter() {
+    ionViewDidLoad() {
         this.boardingSelect.open();
     }
-    onInput(stage) {
-        // console.log(stage);
+    test() {
+        console.log("test");
+    }
+    onInput(stage, form) {
+        console.log(stage);
         this.stage = stage + 1;
         switch (stage) {
             case 1:
@@ -41,6 +47,7 @@ export class RideNowPage {
                 break;
             case 3:
                 this.fetchTimeSlots();
+                console.log(form);
                 this.showTimeSlots = false;
                 break;
         }
@@ -61,6 +68,9 @@ export class RideNowPage {
             loading.dismiss();
             this.showTimeSlots = true;
         }, 1000)
+    }
+    onSelectTimeSlot(timeSlot) {
+        this.navCtrl.push(LuggageDetailsPage);
     }
     public locations = [
         {

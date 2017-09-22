@@ -1,5 +1,5 @@
-page-ride-now {
-  ion-list.ride-input {
+page-luggage-details {
+  ion-list.luggage-input {
     ion-item {
       ion-icon {
         font-size: 12px;
@@ -22,21 +22,6 @@ page-ride-now {
             font-size: 15px;
             color: black;
           }
-        }
-      }
-    }
-  }
-  ion-card {
-    ion-card-header {
-      background: color($colors, secondary) !important;
-      color: white !important;
-    }
-    ion-list {
-      button {
-        text-align: center;
-        border: 1px solid color($colors, primary)!important;
-        ion-label {
-          color: color($colors, secondary) !important;
         }
       }
     }

@@ -11,6 +11,7 @@ import { LoginOtpPage } from '../login/pages/login-otp/login-otp';
 import { HomePage } from '../home/pages/home/home';
 import { RideNowPage } from '../booking/pages/ride-now/ride-now';
 import { RideLaterPage } from '../booking/pages/ride-later/ride-later';
+import { LuggageDetailsPage } from '../booking/pages/luggage-details/luggage-details';
 import { HistoryPage } from '../history/pages/history/history';
 import { SettingsPage } from '../settings/pages/settings/settings';
 
@@ -22,6 +23,7 @@ import { SettingsPage } from '../settings/pages/settings/settings';
     HomePage,
     RideNowPage,
     RideLaterPage,
+    LuggageDetailsPage,
     HistoryPage,
     SettingsPage
   ],
@@ -37,6 +39,7 @@ import { SettingsPage } from '../settings/pages/settings/settings';
     HomePage,
     RideNowPage,
     RideLaterPage,
+    LuggageDetailsPage,
     HistoryPage,
     SettingsPage
   ],

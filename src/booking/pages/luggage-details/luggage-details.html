@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-navbar color="primary">
+        <ion-buttons left>
+            <button
+                ion-button
+                menuToggle
+            >
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
+        <ion-title>Luggage Details</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <form #f>
+        <ion-list class="luggage-input">
+            <ion-item>
+                <ion-label>Select Number of Bags</ion-label>
+                <ion-icon item-start>No of Bags</ion-icon>
+                <ion-select
+                    name="noOfBags"
+                    text-center
+                    #boardingSelect
+                    placeholder="Select Number of Bags"
+                    interface="action-sheet"
+                    [(ngModel)]="selectedBoardingPoint"
+                    (ionBlur)="onInput(1)"
+                >
+                    <ion-option value="1">1</ion-option>
+                    <ion-option value="2">2</ion-option>
+                    <ion-option value="3">3</ion-option>
+                    <ion-option value="4">More than 3</ion-option>
+                </ion-select>
+            </ion-item>
+            <ion-item>
+                <ion-label>Select Total Weight</ion-label>
+                <ion-icon item-start>Total Wt.</ion-icon>
+                <ion-select
+                    name="totalWeight"
+                    text-center
+                    #boardingSelect
+                    placeholder="Select Total Weight"
+                    interface="action-sheet"
+                    [(ngModel)]="selectedBoardingPoint"
+                    (ionBlur)="onInput(1)"
+                >
+                    <ion-option value="1">Less than 15 kgs</ion-option>
+                    <ion-option value="2">15 - 30 kgs</ion-option>
+                    <ion-option value="3">More than 30 kgs</ion-option>
+                </ion-select>
+            </ion-item>
+
+        </ion-list>
+    </form>
+</ion-content>
